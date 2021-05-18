@@ -5,13 +5,14 @@ aplicacao = Flask(__name__)
 
 @aplicacao.route('/monitoramento/<string:moeda>/<int:periodo>', methods=['GET'])
 def monitoramento(moeda, periodo):
+    from bd.candlestick import insere_candlestick
     from classes.candlestick import Candlestick
     import requests
     import time
 
     periodo_em_segundos = periodo * 60
     tempo_decorrido = 0
-    tempo_espera = 5
+    tempo_espera = 10
 
     candlestick = Candlestick()
     valor_recente_candle = None
@@ -37,8 +38,9 @@ def monitoramento(moeda, periodo):
         tempo_decorrido += tempo_espera
 
     candlestick.realiza_fechamento_candle(valor_recente_candle)
+    insere_candlestick(moeda, candlestick.__dict__)
 
-    return candlestick.__dict__, 200
+    return 'Processamento da cotação finalizado.', 200
 
 
 aplicacao.config["DEBUG"] = True
