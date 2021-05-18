@@ -1,8 +1,8 @@
 class Candlestick:
     def __init__(self):
         self.abertura = None
-        self.maximo = None
         self.minimo = None
+        self.maximo = None
         self.fechamento = None
 
     def inicializa_candle(self, valor_inicial_candle):
@@ -16,5 +16,5 @@ class Candlestick:
         elif novo_valor_minimo_maximo > self.maximo:
             self.maximo = novo_valor_minimo_maximo
 
-    def realiza_fechamento_candle(self, valor_fechamento):
+    def atualiza_valor_fechamento_candle(self, valor_fechamento):
         self.fechamento = valor_fechamento

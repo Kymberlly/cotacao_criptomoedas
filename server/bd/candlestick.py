@@ -1,4 +1,4 @@
-def insere_candlestick(moeda, candlestick):
+def insere_candlestick(candlesticks):
     from bd.conexao import executa_query
 
     sql = """
@@ -8,6 +8,10 @@ def insere_candlestick(moeda, candlestick):
             (%s, %s, %s, %s, %s);
         """
 
-    parametros = [(moeda, candlestick['abertura'], candlestick['minimo'],
-                   candlestick['maximo'], candlestick['fechamento'])]
+    parametros = []
+    for moeda, candle in candlesticks.items():
+        abertura, minimo, maximo, fechamento = candle.__dict__.values()
+        parametros.append((moeda, abertura, minimo, maximo, fechamento))
+
+    print(parametros)
     executa_query(sql, parametros)
