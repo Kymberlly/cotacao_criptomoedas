@@ -13,5 +13,4 @@ def insere_candlestick(candlesticks):
         abertura, minimo, maximo, fechamento = candle.__dict__.values()
         parametros.append((moeda, abertura, minimo, maximo, fechamento))
 
-    print(parametros)
     executa_query(sql, parametros)
