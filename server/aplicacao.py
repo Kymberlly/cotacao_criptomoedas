@@ -3,6 +3,15 @@ from flask import Flask, request, jsonify, abort
 aplicacao = Flask(__name__)
 
 
+"""
+    Dificuldades:
+        Aplicação e testes não utilizam mesma hierarquia de pastas.
+    Para rodar os testes é necessário adicionar server.
+    
+        Problema em configurar de testes.
+"""
+
+
 @aplicacao.errorhandler(400)
 def tratamento_erro(e):
     return jsonify(Erro=str(e)), 400

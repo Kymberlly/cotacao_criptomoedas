@@ -1,7 +1,9 @@
+from flask import abort
+
+
 def processamento_candle(periodo_em_segundos, moedas):
-    from bd.candlestick import insere_candlestick
+    from bd.candlestick_crud import insere_candlestick
     from classes.candlestick import Candlestick
-    from flask import abort
     import requests
     import time
 
