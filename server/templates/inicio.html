@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cotação Criptomoedas</title>
+
+    <style type="text/css">
+        body {
+            font-family:"Arial";
+        }
+        table td, th{
+            text-align:center;
+            padding:5px;
+        }
+        div{
+            margin-top:50px;
+            display:flex;
+            justify-content:center;
+        }
+        table td{
+            background-color:#F2F2F2;
+        }
+        table th{
+            background-color:#E6E6E6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Processar Cotações:</h2>
+    <span>* Para mais informações acesse o README.MD da aplicação.</span>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Método</th>
+                    <th>Chamada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>Através da URL: <a href="http://localhost:5000/monitoramento?periodo=1&moeda=BTC_XMR">http://localhost:5000/monitoramento?periodo=1&moeda=BTC_XMR</a></td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>
+                        Através do envio de um body json contendo a seguinte estrutura:
+                        <span style="background-color:#dcdcdc;padding:3px;">{"moeda": ["BTC_XMR", "BTC_KNC", "BTC_ZEC"], "periodo": 1}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify, abort, render_template
 
 aplicacao = Flask(__name__)
 
@@ -12,6 +12,11 @@ aplicacao = Flask(__name__)
         
         Erro na instalação do Docker.
 """
+
+
+@aplicacao.route('/', methods=['GET'])
+def inicio():
+    return render_template('inicio.html')
 
 
 @aplicacao.errorhandler(400)
