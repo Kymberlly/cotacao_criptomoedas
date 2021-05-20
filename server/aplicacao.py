@@ -5,10 +5,12 @@ aplicacao = Flask(__name__)
 
 """
     Dificuldades:
-        Aplicação e testes não utilizam mesma hierarquia de pastas.
-    Para rodar os testes é necessário adicionar server.
+        Aplicação e testes não utilizam mesma hierarquia de pastas, para rodar 
+        os testes é necessário adicionar server;
     
-        Problema em configurar de testes.
+        Problema em configurar de testes;
+        
+        Erro na instalação do Docker.
 """
 
 
@@ -49,5 +51,4 @@ def monitoramento():
     return jsonify('Processamento da cotação finalizado.'), 200
 
 
-aplicacao.config["DEBUG"] = True
 aplicacao.run()
