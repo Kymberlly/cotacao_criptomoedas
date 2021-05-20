@@ -8,9 +8,9 @@ _____________________________________________________________
 
 Atualmente a API possui apenas uma endpoint **/monitoramento** que aceita os seguintes parâmetros:
 
-**periodo** - Tempo de processamento da cotação
+**periodo (string)** - Tempo de processamento da cotação
 
-**moeda** - Moeda na qual deseja realizar o monitoramento
+**moeda (Método GET: string; Método POST: Lista de strings)** - Moeda na qual deseja realizar o monitoramento
 
 
 
